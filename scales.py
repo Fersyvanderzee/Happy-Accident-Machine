@@ -20,6 +20,21 @@ pitches = {  # pitches based on central C (C4).
     'B': 59
 }
 
+fifths = {
+    57: 'C',
+    58: 'C#',
+    59: 'D',
+    48: 'D#',
+    49: 'E',
+    50: 'F',
+    51: 'F#',
+    52: 'G',
+    53: 'G#',
+    54: 'A',
+    55: 'A#',
+    56: 'B'
+}
+
 
 def allowed_pitches(scale):  # which pitches are allowed per scale (only support Cmaj atm)
     allowed_pitches_list = []
@@ -68,3 +83,4 @@ def allowed_pitches(scale):  # which pitches are allowed per scale (only support
 
 def return_closest_pitch(pitches_to_allow, pitch):
     return min(pitches_to_allow, key=lambda x: abs(x - pitch))
+
