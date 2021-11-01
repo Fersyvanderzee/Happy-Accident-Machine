@@ -21,18 +21,18 @@ pitches = {  # pitches based on central C (C4).
 }
 
 fifths = {
-    57: 'C',
-    58: 'C#',
-    59: 'D',
-    48: 'D#',
-    49: 'E',
-    50: 'F',
-    51: 'F#',
-    52: 'G',
-    53: 'G#',
-    54: 'A',
-    55: 'A#',
-    56: 'B'
+    'A': 'C',
+    'A#': 'C#',
+    'B': 'D',
+    'C': 'D#',
+    'C#': 'E',
+    'D': 'F',
+    'D#': 'F#',
+    'E': 'G',
+    'F': 'G#',
+    'F#': 'A',
+    'G': 'A#',
+    'G#': 'B'
 }
 
 
@@ -76,9 +76,21 @@ def allowed_pitches(scale):  # which pitches are allowed per scale (only support
         notes_in_scale = ['C', 'D', 'Eb', 'F', 'G', 'A', 'Bb']
 
     for note in notes_in_scale:
-        allowed_pitches_list.append(pitches[note])
+        allowed_pitches_list.append(note)
 
     return allowed_pitches_list
+
+
+def calc_fifth(list_input):
+    notes_list = []
+    for note in list_input:
+        notes_list.append(fifths[note])
+    return notes_list
+
+
+def convert_to_pitch(note):
+    pitch = pitches[note]
+    return pitch
 
 
 def return_closest_pitch(pitches_to_allow, pitch):
