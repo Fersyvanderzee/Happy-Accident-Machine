@@ -15,7 +15,7 @@ Not due to lack of creativity, but by the way our brains are built. This program
 in general. That makes this a creative companion to fuel your own creativity.
 
 
-# Upcoming
+## Upcoming
 
 * The most important is that at the moment notes follow each other without rest. The randomizer chooses random notes, but can not provide
 a rest instead of a note.
