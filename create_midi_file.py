@@ -14,8 +14,12 @@ def create_midi_file(bpm, duration_input, scale, length, track_name):
 
     for i in range(length):
         if time <= length:
-            note = allowed_pitches(scale)[random.randint(0, 6)]
-            pitch = convert_to_pitch(note)
+            rest_check = random.randint(1,4)
+            if rest_check == 4:
+                pitch = None;
+            else:
+                note = allowed_pitches(scale)[random.randint(0, 6)]
+                pitch = convert_to_pitch(note)
 
             if duration_input == 'random':
                 duration = random.randint(1, 8)
