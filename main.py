@@ -14,9 +14,5 @@ if not testing:
                          track_name=track_name_u)
 
 else:
-    midifile = create_midi_file(bpm=int(172), duration_input='random', scale='Cmaj', length=int(80),
-                                track_name='test_regular')
-    fifth_file = create_fifth_midi_file(bpm=int(172), duration_input='random', length=int(80),
-                                        track_name='test_fifth', list_notes=midifile)
-    print(midifile)
-    print(fifth_file)
+    midifile = create_midi_file(bpm=int(172), duration_input='random', scale='Dmaj', length=int(16),
+                                track_name='five')

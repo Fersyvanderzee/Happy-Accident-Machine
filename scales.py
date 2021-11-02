@@ -75,7 +75,7 @@ def allowed_pitches(scale):  # which pitches are allowed per scale (only support
     if scale == 'A#maj' or scale == 'a#maj' or scale == 'Gmin' or scale == 'gmin':
         notes_in_scale = ['C', 'D', 'Eb', 'F', 'G', 'A', 'Bb']
         
-    if scale == "Cphryg" or scale == 'cphryg':
+    if scale == "Ephryg" or scale == 'ephryg':
         notes_in_scale = ['C', 'D', 'E', 'F', 'G#', 'A', 'B']
 
     for note in notes_in_scale:
