@@ -19,6 +19,7 @@ in general. That makes this a creative companion to fuel your own creativity.
 
 * The most important is that at the moment notes follow each other without rest. The randomizer chooses random notes, but can not provide
 a rest instead of a note.
+* A way to add scales is highly desirable. At the moment it's a tedious task to just add one scale. There are many scales multiplied by each root note.
 * At the moment it's quite a hassle to use this program, since it is in early development. Also, you need to have Python and several libs
 installed to have it work properly. It would be nice to have a standalone website that can we used by anyone. I guess it is time to 
 implement the Django framework!
