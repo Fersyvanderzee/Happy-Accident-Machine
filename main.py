@@ -14,5 +14,11 @@ if not testing:
                          track_name=track_name_u)
 
 else:
-    midifile = create_midi_file(bpm=int(172), duration_input='random', scale='Dmaj', length=int(16),
-                                track_name='five')
+    midifile = create_midi_file(bpm=int(172), duration_input='random', scale='Dmaj', length=int(80),
+                                track_name='one')
+    midifile = create_midi_file(bpm=int(172), duration_input='random', scale='Dmaj', length=int(80),
+                                track_name='two')
+    midifile = create_midi_file(bpm=int(172), duration_input='random', scale='Dmaj', length=int(80),
+                                track_name='three')
+    midifile = create_midi_file(bpm=int(172), duration_input='random', scale='Dmaj', length=int(80),
+                                track_name='four')

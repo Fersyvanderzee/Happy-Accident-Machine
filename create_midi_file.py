@@ -14,13 +14,7 @@ def create_midi_file(bpm, duration_input, scale, length, track_name):
 
     for i in range(length):
         if time <= length:
-            rest_check = random.randint(1,2)
-            if rest_check == 4:
-                note = 0
-                pitch = 0
-            else:
-                note = allowed_pitches(scale)[random.randint(0, 6)]
-                pitch = convert_to_pitch(note)
+            rest_check = random.randint(1, 4)
 
             if duration_input == 'random':
                 duration = random.randint(1, 8) * 2
@@ -29,10 +23,16 @@ def create_midi_file(bpm, duration_input, scale, length, track_name):
 
             velocity = random.randint(75, 100)
 
-            mf.addNote(track, 0, pitch, time, duration, velocity)
+            if rest_check != 4:
+                note = allowed_pitches(scale)[random.randint(0, 6)]
+                pitch = convert_to_pitch(note)
+                mf.addNote(track, 0, pitch, time, duration, velocity)
 
-            notes_list.append(note)
-            time += duration
+                notes_list.append(note)
+                time += duration
+            else:
+                time += duration
+                continue
 
     with open('output/' + track_name + '.mid', 'wb') as output_file:
         mf.writeFile(output_file)
