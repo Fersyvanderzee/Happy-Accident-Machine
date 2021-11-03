@@ -17,7 +17,6 @@ in general. That makes this a creative companion to fuel your own creativity.
 
 ## Upcoming
 
-* An easier way to add scales is highly desirable. At the moment it's a tedious task to just add one scale. There are many scales multiplied by each root note.
 * At the moment it's quite a hassle to use this program, since it is in early development. Also, you need to have Python and several libs
 installed to have it work properly. It would be nice to have a standalone website that can we used by anyone. I guess it is time to 
 implement the Django framework!

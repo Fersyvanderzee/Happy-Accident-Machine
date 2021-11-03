@@ -1,79 +1,48 @@
 import random
 from midiutil.MidiFile import MIDIFile
-from scales import *
 
 
-def create_midi_file(bpm, duration_input, scale, length, track_name):
-    mf = MIDIFile(1)
+class Midifile:
     time = 0
     track = 0
     notes_list = []
 
-    mf.addTrackName(track, time, track_name)
-    mf.addTempo(track, time, bpm)
+    def __init__(self, bpm, duration_input, scale, length, track_name):
+        mf = MIDIFile(1)
 
-    for i in range(length):
-        if time <= length:
-            rest_check = random.randint(1, 4)
+        mf.addTrackName(self.track, self.time, track_name)
+        mf.addTempo(self.track, self.time, bpm)
 
-            if duration_input == 'random':
-                duration = random.randint(1, 8) * 2
-            else:
-                duration = 2
+        for i in range(length):
+            if self.time <= length:
+                rest_check = random.randint(1, 4)
 
-            velocity = random.randint(75, 100)
+                if duration_input == 'random':
+                    duration = random.randint(1, 8) * 2
+                else:
+                    duration = 2
 
-            if rest_check != 4:
-                note = allowed_pitches(scale)[random.randint(0, 6)]
-                pitch = convert_to_pitch(note)
-                mf.addNote(track, 0, pitch, time, duration, velocity)
+                velocity = random.randint(75, 100)
 
-                notes_list.append(note)
-                time += duration
-            else:
-                time += duration
-                continue
+                if rest_check != 4:
+                    note = scale.return_notes()[random.randint(0, 6)]
+                    pitch = scale.convert_pitch(note)
+                    mf.addNote(self.track, 0, pitch, self.time, duration, velocity)
 
-    with open('output/' + track_name + '.mid', 'wb') as output_file:
-        mf.writeFile(output_file)
+                    self.notes_list.append(note)
+                    self.time += duration
+                else:
+                    self.time += duration
+                    continue
 
-    print(f'Created midi file: {track_name}.mid')
+        with open('output/' + track_name + '.mid', 'wb') as output_file:
+            mf.writeFile(output_file)
 
-    return notes_list
+        print(f'Created midi file: {track_name}.mid')
 
+    def return_notes(self):
+        return self.notes_list
 
-def create_fifth_midi_file(bpm, duration_input, length, track_name, list_notes):
-    mf = MIDIFile(1)
-    time = 0
-    track = 0
-    notes_list = []
-
-    mf.addTrackName(track, time, track_name)
-    mf.addTempo(track, time, bpm)
-
-    converted_list = calc_fifth(list_notes)
-
-    for note in converted_list:
-        pitch = convert_to_pitch(note)
-
-        if duration_input == 'random':
-            duration = random.randint(1, 8)
-        else:
-            duration = 1
-
-        velocity = random.randint(75, 100)
-
-        mf.addNote(track, 0, pitch, time, duration, velocity)
-
-        notes_list.append(note)
-        time += duration
-
-    with open('output/' + track_name + '.mid', 'wb') as output_file:
-        mf.writeFile(output_file)
-
-    print(f'Created midi file: {track_name}.mid')
-
-    return notes_list
 
 
 
