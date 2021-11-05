@@ -1,4 +1,4 @@
-# Note randomizer to midi (v0.0.1)
+# Note randomizer to midi (v0.0.3)
 
 Note: this is in development and might not work properly.
 This program randomizes notes and converts them to a midi-file that can we used in your favorite DAW (Ableton, FL Studio, Reaper, etc).
@@ -13,6 +13,11 @@ This midi-file can be imported in any DAW that supports midi. The fun thing is t
 in the midi-file, the results might be unexpected. As a amateur musician my self I often find myself to use the same kind of patterns I'm used to.
 Not due to lack of creativity, but by the way our brains are built. This program is unbiased to what is 'supposed to sound right' or how music works
 in general. That makes this a creative companion to fuel your own creativity.
+
+
+## How to use it
+You need to install MIDIUtil (https://pypi.org/project/MIDIUtil/) in order to use it.Apart from that you can just run 
+the main.py script. See the instructions in de main.py.
 
 
 ## Upcoming

@@ -9,4 +9,10 @@ def test(bpm, scale, voices):
         i += 1
 
 
+# Generate the midi file!
+# Use test(bpm, scale, voices)
+# bpm = int
+# scale = variable (so use cmaj instead of 'cmaj') See scale.py for all scales.
+# voices = int
+
 test(172, cmaj, 1)

@@ -62,6 +62,7 @@ class Scale:
         return self.fifth_notes
 
 
+# All integrated scales
 cmaj = Scale('cmaj', ['C', 'D', 'E', 'F', 'G', 'A', 'B'])
 dmaj = Scale('dmaj', ['C#', 'D', 'E', 'F#', 'G', 'A', 'B'])
 emaj = Scale('emaj', ['C#', 'D#', 'E', 'F#', 'G#', 'A', 'B'])
