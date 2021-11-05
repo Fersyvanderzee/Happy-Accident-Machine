@@ -2,12 +2,29 @@ import random
 from midiutil.MidiFile import MIDIFile
 
 
+def rest_check():
+    if random.randint(1, 4) != 4:
+        return True
+    else:
+        return False
+
+
+def calc_duration(input_duration):
+    if input_duration == 'random':
+        duration = random.randint(1, 8) * 3
+    else:
+        duration = 2
+    return duration
+
+
 class Midifile:
     time = 0
     track = 0
-    notes_list = []
 
-    def __init__(self, bpm, duration_input, scale, length, track_name):
+    notes_list = []
+    fifths_list = []
+
+    def __init__(self, bpm, duration_input, scale, length, track_name, voices):
         mf = MIDIFile(1)
 
         mf.addTrackName(self.track, self.time, track_name)
@@ -15,23 +32,23 @@ class Midifile:
 
         for i in range(length):
             if self.time <= length:
-                rest_check = random.randint(1, 4)
 
-                if duration_input == 'random':
-                    duration = random.randint(1, 8) * 2
-                else:
-                    duration = 2
+                duration = calc_duration(duration_input)
+                if rest_check():
+                    for voice in range(voices):
+                        note = scale.return_notes()[random.randint(0, 6)]
+                        pitch = scale.convert_pitch(note)
+                        velocity = random.randint(75, 100)
+                        self.notes_list.append(note)
+                        mf.addNote(self.track, 0, pitch, self.time, duration, velocity)
+                        voice += 1
 
-                velocity = random.randint(75, 100)
-
-                if rest_check != 4:
-                    note = scale.return_notes()[random.randint(0, 6)]
-                    pitch = scale.convert_pitch(note)
-                    mf.addNote(self.track, 0, pitch, self.time, duration, velocity)
-
-                    self.notes_list.append(note)
                     self.time += duration
+
                 else:
+
+                    self.notes_list.append('_')
+                    self.fifths_list.append('_')
                     self.time += duration
                     continue
 
@@ -43,7 +60,8 @@ class Midifile:
     def return_notes(self):
         return self.notes_list
 
-
+    def return_fifths(self):
+        return self.fifths_list
 
 
 
