@@ -16,7 +16,7 @@ in general. That makes this a creative companion to fuel your own creativity.
 
 
 ## How to use it
-You need to install MIDIUtil (https://pypi.org/project/MIDIUtil/) in order to use it.Apart from that you can just run 
+You need to install MIDIUtil (https://pypi.org/project/MIDIUtil/) in order to use it. Apart from that you can just run 
 the main.py script. See the instructions in de main.py.
 
 
