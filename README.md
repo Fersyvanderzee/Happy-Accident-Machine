@@ -1,4 +1,4 @@
-# Note randomizer to midi (v0.0.3)
+# Happy Accident Machine (v0.0.4)
 
 Note: this is in development and might not work properly.
 This program randomizes notes and converts them to a midi-file that can we used in your favorite DAW (Ableton, FL Studio, Reaper, etc).
