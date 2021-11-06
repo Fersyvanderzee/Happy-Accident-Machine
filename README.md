@@ -16,8 +16,9 @@ in general. That makes this a creative companion to fuel your own creativity.
 
 
 ## How to use it
-You need to install MIDIUtil (https://pypi.org/project/MIDIUtil/) in order to use it. Apart from that you can just run 
-the main.py script. See the instructions in de main.py.
+First of all (obviously) you need to have Python3 installed.
+If you have Python3 installed you can use pip to install MIDIUtil (https://pypi.org/project/MIDIUtil/) in order to use this program (pip install midiutil).
+Now you can run the main.py script out of an IDE like PyCharm. See the instructions in de main.py.
 
 
 ## Upcoming
@@ -25,5 +26,6 @@ the main.py script. See the instructions in de main.py.
 * At the moment it's quite a hassle to use this program, since it is in early development. Also, you need to have Python and several libs
 installed to have it work properly. It would be nice to have a standalone website that can we used by anyone. I guess it is time to 
 implement the Django framework!
+* As long as there is no website connected to this program, the first thing I will do is update the main.py so it can run from de command line.
 * More variety in scales. At the moment it only supports major and minor scales, but not more advanced scales.
 * More functions to have even more unexpected results, like circle of fifths etc.
