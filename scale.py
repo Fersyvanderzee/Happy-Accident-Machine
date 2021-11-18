@@ -1,5 +1,7 @@
+import random
+
+
 class Scale:
-    name = ''
     notes = []
     fifth_notes = []
 
@@ -44,6 +46,7 @@ class Scale:
 
     def convert_pitch(self, note):
         pitch = self.pitches[note]
+        bool_check = random.randint(1, 2)
         return pitch
 
     def convert_fifth(self, note):

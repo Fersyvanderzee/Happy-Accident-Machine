@@ -1,6 +1,8 @@
 import random
 from midiutil.MidiFile import MIDIFile
 
+from scale import return_closest_pitch
+
 
 def rest_check():
     if random.randint(1, 4) != 4:
@@ -11,10 +13,14 @@ def rest_check():
 
 def calc_duration(input_duration):
     if input_duration == 'random':
-        duration = random.randint(1, 8) * 3
+        duration = random.randint(1, 8)
     else:
         duration = 2
     return duration
+
+
+
+
 
 
 class Midifile:
@@ -40,6 +46,8 @@ class Midifile:
                         pitch = scale.convert_pitch(note)
                         velocity = random.randint(75, 100)
                         self.notes_list.append(note)
+                        if random.randint(1, 2) == 2:
+                            pitch += 12
                         mf.addNote(self.track, 0, pitch, self.time, duration, velocity)
                         voice += 1
 

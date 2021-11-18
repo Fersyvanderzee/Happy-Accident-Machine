@@ -2,10 +2,9 @@ from create_midi_file import *
 from scale import *
 
 
-def test(bpm, scale, voices):
-      for i in range(5):
-        global midifile
-        midifile = Midifile(bpm, 'random', scale, 80, 'test' + str(i+1), voices)
+def test(bpm, scale, voices, tracks):
+    for i in range(tracks):
+        Midifile(bpm, 'random', scale, 240, 'test' + str(i+1), voices)
         i += 1
 
 
@@ -15,4 +14,4 @@ def test(bpm, scale, voices):
 # scale = variable (so use cmaj instead of 'cmaj') See scale.py for all scales.
 # voices = int
 
-test(172, cmaj, 1)
+test(172, dmaj, 1, 10)
