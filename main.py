@@ -1,17 +1,11 @@
 from create_midi_file import *
-from scale import *
 
 
-def test(bpm, scale, voices, tracks):
+def test(bpm, random_duration, root_note, mode, length, track_name, voices, tracks):
     for i in range(tracks):
-        Midifile(bpm, 'random', scale, 240, 'test' + str(i+1), voices)
+        Midifile(bpm=bpm, random_duration=random_duration, root_note=root_note,
+                 mode=mode, length=length, track_name=track_name + str(i), voices=voices)
         i += 1
 
 
-# Generate the midi file!
-# Use test(bpm, scale, voices)
-# bpm = int
-# scale = variable (so use cmaj instead of 'cmaj') See scale.py for all scales.
-# voices = int
-
-test(172, dmaj, 1, 10)
+test(bpm=172, random_duration=False, root_note='F#', mode='Harmonic minor', length=80, track_name='test', voices=1, tracks=1)
