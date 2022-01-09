@@ -23,7 +23,8 @@ Now you can run the main.py script out of an IDE like PyCharm. See the instructi
 
 ## Upcoming
 
-* At the moment it's quite a hassle to use this program, since it is in early development. Also, you need to have Python and several libs
-installed to have it work properly. It would be nice to have a standalone website that can be used by anyone. I guess it is time to 
-implement the Django framework!
-* More functions to have even more unexpected results, like circle of fifths etc.
+* At the moment the app is in development. I am currently using the Kivy framework in order to turn the file into a standalone app. The next step will be a
+web application through the Django/Flask framework.
+* There is the idea of using machine learning in order to create better melodies.
+* Eventually, I want to use this note randomizer with an Arduino in order to have it communicate as a sequencer for my modular synthesizer. 
+I might even turn it into a Eurorack module.
