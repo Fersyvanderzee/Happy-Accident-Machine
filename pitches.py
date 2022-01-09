@@ -19,6 +19,6 @@ pitches = {  # pitches based on central C (C4).
 }
 
 
-def convert_pitch(note):
-    pitch = pitches[note]
-    return pitch
+def convert_pitch(note_to_convert):
+    pitch_val = pitches[note_to_convert]
+    return pitch_val
