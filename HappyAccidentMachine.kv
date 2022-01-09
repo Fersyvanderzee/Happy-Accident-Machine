@@ -1,0 +1,88 @@
+<HappyAccidentMachine>:
+    Label:
+        text: 'Happy Accident Machine!'
+        center_x: root.width / 2
+        top: root.top - 50
+        font_size: 40
+
+    Label:
+        text: 'Root note:'
+        center_x: root.width / 2
+        top: root.top - 120
+        font_size: 12
+
+    TextInput:
+        center_x: root.width / 2
+        multiline: False
+        on_text_validate: app.process_root_note()
+        top: root.top - 180
+        height: 30
+        width: 200
+
+    Label:
+        text: 'Mode:'
+        center_x: root.width / 2
+        top: root.top - 180
+        font_size: 12
+
+    TextInput:
+        center_x: root.width / 2
+        multiline: False
+        on_text_validate: app.process_mode()
+        top: root.top - 240
+        height: 30
+        width: 200
+
+    Label:
+        text: 'BPM:'
+        center_x: root.width / 2
+        top: root.top - 240
+        font_size: 12
+
+    TextInput:
+        center_x: root.width / 2
+        multiline: False
+        on_text_validate: app.process_bpm()
+        top: root.top - 300
+        height: 30
+        width: 200
+
+    Label:
+        text: 'Location:'
+        center_x: root.width / 2
+        top: root.top - 300
+        font_size: 12
+
+    TextInput:
+        center_x: root.width / 2
+        multiline: False
+        top: root.top - 360
+        height: 30
+        width: 200
+
+    Label:
+        text: 'File name:'
+        center_x: root.width / 2
+        top: root.top - 360
+        font_size: 12
+
+    TextInput:
+        center_x: root.width / 2
+        multiline: False
+        on_text_validate: app.process_file_name()
+        top: root.top - 420
+        height: 30
+        width: 200
+
+    Button:
+        text: 'Generate Midi file'
+        center_x: root.width / 2
+        top: root.top - 500
+        height: 30
+        width: 200
+        on_press: app.create_file()
+
+
+
+
+

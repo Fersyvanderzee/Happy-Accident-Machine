@@ -1,14 +1,44 @@
+from kivy.app import App
+from kivy.uix.widget import Widget
+
 from create_midi_file import *
 
 
-def create_file(bpm, random_duration, root_note, mode, length, track_name, voices, tracks):
-    for i in range(tracks):
-        Midifile(bpm=bpm, random_duration=random_duration, root_note=root_note,
-                 mode=mode, length=length, track_name=track_name + str(i), voices=voices)
-        i += 1
+class HappyAccidentMachine(Widget):
+    pass
 
 
-create_file(bpm=100, random_duration=False, root_note='D', mode='Harmonic minor',
-            length=80, track_name='test', voices=1, tracks=3)
+class HappyAccidentMachineApp(App):
+    root_note = ""
+    mode = ""
+    bpm = ""
+    location = ""
+    file_name = ""
+
+    def build(self):
+        return HappyAccidentMachine()
+
+    def create_file(self):
+        Midifile(bpm=172, random_duration=False, root_note=self.root_note,
+                 mode=self.mode, max_range=1, length=80, track_name=self.file_name)
+        print('File created!')
+
+    # process inputs
+    def process_root_note(self):
+        self.root_note = str(self.root.ids.input.text)
+
+    def process_mode(self):
+        self.mode = str(self.root.ids.input.text)
+
+    def process_bpm(self):
+        print(type(self.root.ids.input.text))
+
+    def process_location(self):
+        self.location = str(self.root.ids.input.text)
+
+    def process_file_name(self):
+        self.file_name = str(self.root.ids.input.text)
 
 
+if __name__ == "__main__":
+    HappyAccidentMachineApp().run()
