@@ -26,5 +26,4 @@ Now you can run the main.py script out of an IDE like PyCharm. See the instructi
 * At the moment it's quite a hassle to use this program, since it is in early development. Also, you need to have Python and several libs
 installed to have it work properly. It would be nice to have a standalone website that can be used by anyone. I guess it is time to 
 implement the Django framework!
-* More variety in scales. At the moment it only supports major and minor scales, but not more advanced scales.
 * More functions to have even more unexpected results, like circle of fifths etc.
